@@ -25,9 +25,7 @@ class MeuApp extends StatelessWidget {
   }
 }
 
-// ======================================================
 // LOGIN
-// ======================================================
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -255,9 +253,7 @@ class LoginPage extends StatelessWidget {
   }
 }
 
-// ======================================================
 // CADASTRO
-// ======================================================
 
 class CadastroPage extends StatelessWidget {
   const CadastroPage({super.key});
@@ -367,9 +363,7 @@ class CadastroPage extends StatelessWidget {
   }
 }
 
-// ======================================================
 // HOME
-// ======================================================
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
