@@ -11,7 +11,7 @@ class MeuApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Finance App',
+      title: 'Investidor100',
 
       theme: ThemeData(
         primarySwatch: Colors.green,
@@ -23,9 +23,7 @@ class MeuApp extends StatelessWidget {
   }
 }
 
-// ======================================================
 // LOGIN
-// ======================================================
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -329,9 +327,7 @@ class LoginPage extends StatelessWidget {
   }
 }
 
-// ======================================================
 // CADASTRO
-// ======================================================
 
 class CadastroPage extends StatelessWidget {
   const CadastroPage({super.key});
@@ -412,9 +408,7 @@ class CadastroPage extends StatelessWidget {
   }
 }
 
-// ======================================================
 // HOME
-// ======================================================
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
