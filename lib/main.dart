@@ -60,7 +60,7 @@ class LoginPage extends StatelessWidget {
                   SizedBox(height: 15),
 
                   Text(
-                    'Finance App',
+                    'investidor100 ',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 24,
@@ -99,9 +99,9 @@ class LoginPage extends StatelessWidget {
               onTap: () {
                 Navigator.pop(context);
 
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Finance App v1.0')),
-                );
+                ScaffoldMessenger.of(
+                  context,
+                ).showSnackBar(const SnackBar(content: Text('investidor100')));
               },
             ),
           ],
@@ -165,7 +165,7 @@ class LoginPage extends StatelessWidget {
 
                     // TITULO
                     const Text(
-                      'Finance App',
+                      'investidor100',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 28,
@@ -454,7 +454,63 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: const Color(0xFF006B1F),
 
-        title: const Text('Finance App', style: TextStyle(color: Colors.white)),
+        // BOTÃO VOLTAR
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+
+        title: Stack(
+          alignment: Alignment.center,
+
+          children: [
+            // TITULO CENTRALIZADO
+            const Center(
+              child: Text(
+                'investidor100',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            // LOGO
+            Align(
+              alignment: Alignment.centerLeft,
+
+              child: Padding(
+                padding: const EdgeInsets.only(left: 45),
+
+                child: Container(
+                  width: 40,
+                  height: 40,
+
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.white, width: 2),
+
+                    shape: BoxShape.circle,
+                  ),
+
+                  child: const Center(
+                    child: Text(
+                      'Ð',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
 
       body: Padding(
