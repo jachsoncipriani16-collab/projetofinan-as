@@ -31,6 +31,10 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+// DIFERENCIAL
+// Widget: Drawer
+// Tipo: Widget Diferencial
+// Função: Cria um menu lateral hamburguer funcional.
       // MENU HAMBURGUER
       drawer: Drawer(
         child: ListView(
@@ -83,7 +87,11 @@ class LoginPage extends StatelessWidget {
             ListTile(
               leading: const Icon(Icons.person_add),
               title: const Text('Criar Conta'),
-
+// NAVEGAÇÃO WIDGET
+// Widget: Navigator.push()
+// Tipo: Navigation Widget
+// Função: Faz a troca de tela para a HomePage.
+              
               onTap: () {
                 Navigator.push(
                   context,
@@ -107,7 +115,10 @@ class LoginPage extends StatelessWidget {
           ],
         ),
       ),
-
+// LAYOUT WIDGET
+// Widget: Column
+// Tipo: Layout Widget
+// Função: Organiza os elementos verticalmente na tela.
       body: Column(
         children: [
           // TOPO VERDE
@@ -234,7 +245,10 @@ class LoginPage extends StatelessWidget {
                   Container(width: 70, height: 4, color: Colors.grey),
 
                   const SizedBox(height: 40),
-
+// INPUT WIDGET
+// Widget: TextField
+// Tipo: Input Widget
+// Função: Permite o usuário digitar informações.
                   // EMAIL
                   TextField(
                     decoration: InputDecoration(
