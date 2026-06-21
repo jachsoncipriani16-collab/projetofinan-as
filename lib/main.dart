@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'investimentopage.dart';
+import 'metafinanceirapage.dart';
 
 void main() {
   runApp(const MeuApp());
@@ -86,12 +88,7 @@ class LoginPage extends StatelessWidget {
 
             ListTile(
               leading: const Icon(Icons.person_add),
-              title: const Text('Criar Conta'),
-// NAVEGAÇÃO WIDGET
-// Widget: Navigator.push()
-// Tipo: Navigation Widget
-// Função: Faz a troca de tela para a HomePage.
-              
+              title: const Text('Criar Conta'),          
               onTap: () {
                 Navigator.push(
                   context,
@@ -115,10 +112,6 @@ class LoginPage extends StatelessWidget {
           ],
         ),
       ),
-// LAYOUT WIDGET
-// Widget: Column
-// Tipo: Layout Widget
-// Função: Organiza os elementos verticalmente na tela.
       body: Column(
         children: [
           // TOPO VERDE
@@ -245,11 +238,6 @@ class LoginPage extends StatelessWidget {
                   Container(width: 70, height: 4, color: Colors.grey),
 
                   const SizedBox(height: 40),
-// INPUT WIDGET
-// Widget: TextField
-// Tipo: Input Widget
-// Função: Permite o usuário digitar informações.
-                  // EMAIL
                   TextField(
                     decoration: InputDecoration(
                       hintText: '@gmail.com',
@@ -527,46 +515,57 @@ class HomePage extends StatelessWidget {
         ),
       ),
 
-      body: Padding(
-        padding: const EdgeInsets.all(25),
+    body: Padding(
+  padding: const EdgeInsets.all(25),
 
-        child: ListView(
-          children: [
-            cardMenu(
-              icon: Icons.trending_up,
-              texto: 'Investimentos',
+  child: ListView(
+    children: [
 
-              onTap: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Tela na Parte 2')),
-                );
-              },
+      // SIMULADOR DE INVESTIMENTOS
+      cardMenu(
+        icon: Icons.trending_up,
+        texto: 'Investimentos',
+
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) =>
+                  const SimuladorInvestimentoPage(),
             ),
-
-            cardMenu(
-              icon: Icons.savings,
-              texto: 'Poupança',
-
-              onTap: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Tela na Parte 2')),
-                );
-              },
-            ),
-
-            cardMenu(
-              icon: Icons.pie_chart,
-              texto: 'Despesas',
-
-              onTap: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Tela na Parte 2')),
-                );
-              },
-            ),
-          ],
-        ),
+          );
+        },
       ),
-    );
-  }
-}
+
+      // META FINANCEIRA
+      cardMenu(
+        icon: Icons.savings,
+        texto: 'Poupança',
+
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) =>
+                  const MetaFinanceiraPage(),
+            ),
+          );
+        },
+      ),
+
+      // DESPESAS
+      cardMenu(
+        icon: Icons.pie_chart,
+        texto: 'Despesas',
+
+        onTap: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('Tela em desenvolvimento'),
+            ),
+          );
+        },
+      ),
+    ],
+  ),
+),
