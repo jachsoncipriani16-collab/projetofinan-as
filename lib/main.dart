@@ -33,10 +33,10 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-// DIFERENCIAL
-// Widget: Drawer
-// Tipo: Widget Diferencial
-// Função: Cria um menu lateral hamburguer funcional.
+      // DIFERENCIAL
+      // Widget: Drawer
+      // Tipo: Widget Diferencial
+      // Função: Cria um menu lateral hamburguer funcional.
       // MENU HAMBURGUER
       drawer: Drawer(
         child: ListView(
@@ -88,7 +88,7 @@ class LoginPage extends StatelessWidget {
 
             ListTile(
               leading: const Icon(Icons.person_add),
-              title: const Text('Criar Conta'),          
+              title: const Text('Criar Conta'),
               onTap: () {
                 Navigator.push(
                   context,
@@ -412,6 +412,8 @@ class CadastroPage extends StatelessWidget {
 
 // HOME
 
+// HOME
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -422,24 +424,18 @@ class HomePage extends StatelessWidget {
   }) {
     return InkWell(
       onTap: onTap,
-
       child: Container(
         margin: const EdgeInsets.only(bottom: 25),
         padding: const EdgeInsets.all(20),
-
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(25),
-
           boxShadow: const [BoxShadow(blurRadius: 8, color: Colors.black12)],
         ),
-
         child: Column(
           children: [
             Icon(icon, size: 70, color: Colors.green),
-
             const SizedBox(height: 10),
-
             Text(
               texto,
               style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
@@ -456,10 +452,8 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: const Color(0xFF006B1F),
 
-        // BOTÃO VOLTAR
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
-
           onPressed: () {
             Navigator.pop(context);
           },
@@ -467,12 +461,10 @@ class HomePage extends StatelessWidget {
 
         title: Stack(
           alignment: Alignment.center,
-
           children: [
-            // TITULO CENTRALIZADO
             const Center(
               child: Text(
-                'investidor100',
+                'Investidor100',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 28,
@@ -481,23 +473,17 @@ class HomePage extends StatelessWidget {
               ),
             ),
 
-            // LOGO
             Align(
               alignment: Alignment.centerLeft,
-
               child: Padding(
                 padding: const EdgeInsets.only(left: 45),
-
                 child: Container(
                   width: 40,
                   height: 40,
-
                   decoration: BoxDecoration(
                     border: Border.all(color: Colors.white, width: 2),
-
                     shape: BoxShape.circle,
                   ),
-
                   child: const Center(
                     child: Text(
                       'Ð',
@@ -515,57 +501,52 @@ class HomePage extends StatelessWidget {
         ),
       ),
 
-    body: Padding(
-  padding: const EdgeInsets.all(25),
+      body: Padding(
+        padding: const EdgeInsets.all(25),
 
-  child: ListView(
-    children: [
-
-      // SIMULADOR DE INVESTIMENTOS
-      cardMenu(
-        icon: Icons.trending_up,
-        texto: 'Investimentos',
-
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) =>
-                  const SimuladorInvestimentoPage(),
+        child: ListView(
+          children: [
+            // SIMULADOR
+            cardMenu(
+              icon: Icons.trending_up,
+              texto: 'Investimentos',
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SimuladorInvestimentoPage(),
+                  ),
+                );
+              },
             ),
-          );
-        },
-      ),
 
-      // META FINANCEIRA
-      cardMenu(
-        icon: Icons.savings,
-        texto: 'Poupança',
-
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) =>
-                  const MetaFinanceiraPage(),
+            // META FINANCEIRA
+            cardMenu(
+              icon: Icons.savings,
+              texto: 'Poupança',
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const MetaFinanceiraPage(),
+                  ),
+                );
+              },
             ),
-          );
-        },
-      ),
 
-      // DESPESAS
-      cardMenu(
-        icon: Icons.pie_chart,
-        texto: 'Despesas',
-
-        onTap: () {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('Tela em desenvolvimento'),
+            // DESPESAS
+            cardMenu(
+              icon: Icons.pie_chart,
+              texto: 'Despesas',
+              onTap: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Tela em desenvolvimento')),
+                );
+              },
             ),
-          );
-        },
+          ],
+        ),
       ),
-    ],
-  ),
-),
+    );
+  }
+}
